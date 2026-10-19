@@ -1,0 +1,384 @@
+*{box-sizing:border-box}
+
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #172033;
+  background: #f5f7fb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button, input {
+  font: inherit;
+}
+
+.app-shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 42px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #172033;
+  font-size: 21px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #6254e8;
+  color: white;
+  font-size: 23px;
+}
+
+.network-badge, .count-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e1e5ef;
+  border-radius: 999px;
+  padding: 9px 14px;
+  background: white;
+  color: #526078;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #e8a23a;
+}
+
+.hero {
+  padding: 42px;
+  border-radius: 24px;
+  background: linear-gradient(125deg, #171c3b, #37316c 68%, #6254e8);
+  color: white;
+  box-shadow: 0 18px 45px #25265c1c;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #8d83ff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 650px;
+  margin: 0;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+
+.hero-copy {
+  max-width: 590px;
+  margin: 18px 0 30px;
+  color: #d4d6ed;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stat-card {
+  padding: 18px;
+  border: 1px solid #ffffff24;
+  border-radius: 15px;
+  background: #ffffff0d;
+}
+
+.stat-card span, .stat-card strong {
+  display: block;
+}
+
+.stat-card span {
+  margin-bottom: 10px;
+  color: #d0d0e7;
+  font-size: 13px;
+}
+
+.stat-card strong {
+  font-size: 29px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  align-items: start;
+  gap: 28px;
+  margin-top: 38px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.section-heading .eyebrow {
+  margin-bottom: 7px;
+}
+
+.section-heading h2, .add-form h2 {
+  margin: 0;
+  font-size: 23px;
+  letter-spacing: -0.5px;
+}
+
+.milestone-list {
+  display: grid;
+  gap: 13px;
+}
+
+.milestone-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 19px;
+  border: 1px solid #e7eaf2;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 5px 18px #17203305;
+}
+
+.milestone-icon {
+  display: grid;
+  flex: 0 0 40px;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: #eeecff;
+  color: #6254e8;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.milestone-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.milestone-content h3 {
+  margin: 0 0 6px;
+  font-size: 15px;
+}
+
+.milestone-content p {
+  margin: 0;
+  color: #7a8498;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.status {
+  flex-shrink: 0;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.status-completed {
+  background: #e5f8ee;
+  color: #218052;
+}
+
+.status-in-progress {
+  background: #fff2d9;
+  color: #986414;
+}
+
+.status-planned {
+  background: #edf0f6;
+  color: #657086;
+}
+
+.add-form {
+  padding: 24px;
+  border: 1px solid #e7eaf2;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 8px 25px #17203306;
+}
+
+.add-form h2 {
+  margin-bottom: 8px;
+  font-size: 21px;
+}
+
+.add-form p {
+  margin: 0 0 24px;
+  color: #7a8498;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.add-form label {
+  display: block;
+  margin: 17px 0 8px;
+  color: #39445b;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.add-form input {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #dfe4ee;
+  border-radius: 10px;
+  outline: none;
+  background: #fbfcfe;
+  color: #172033;
+}
+
+.add-form input:focus {
+  border-color: #6254e8;
+  box-shadow: 0 0 0 3px #6254e81a;
+}
+
+.add-form button {
+  width: 100%;
+  margin-top: 22px;
+  padding: 13px;
+  border: 0;
+  border-radius: 10px;
+  background: #6254e8;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.add-form button:hover {
+  background: #5042d0;
+  transform: translateY(-1px);
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 42px;
+  padding: 22px 0;
+  border-top: 1px solid #e5e8f0;
+  color: #7a8498;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    padding: 16px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 24px;
+  }
+
+  .hero {
+    padding: 25px;
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+
+  .milestone-card {
+    flex-wrap: wrap;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+.milestone-card select {
+  max-width: 150px;
+  padding: 8px 10px;
+  border: 1px solid #dfe4ee;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #39445b;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+}
+
+.milestone-card select:focus {
+  border-color: #6254e8;
+  box-shadow: 0 0 0 3px #6254e81a;
+}
+
+.milestone-card select:hover {
+  border-color: #6254e8;
+}
+
+@media (max-width: 520px) {
+  .milestone-card select {
+    max-width: 100%;
+  }
+}
+
+.delete-button {
+  padding: 8px 12px;
+  border: 1px solid #f0caca;
+  border-radius: 9px;
+  background: #fff5f5;
+  color: #c03939;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.delete-button:hover {
+  background: #ffe5e5;
+  border-color: #e5a3a3;
+}
+
+.delete-button:focus-visible {
+  outline: 3px solid #f3b7b7;
+  outline-offset: 2px;
+}
